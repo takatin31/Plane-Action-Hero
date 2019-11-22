@@ -1,5 +1,5 @@
 public abstract class Bonus{
-    private PVector pos;
+    protected PVector pos;
 
     public Bonus(PVector pos){
         this.pos = pos;

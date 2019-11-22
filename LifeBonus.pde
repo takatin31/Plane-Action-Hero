@@ -1,4 +1,4 @@
-public class LifeBonus extends Bonus{
+public class LifeBonus extends AleaBonus{
 
     public LifeBonus(PVector pos){
         super(pos);

@@ -1,11 +1,14 @@
-Player player;
+private Player player;
 private LaserFactory laserFactory;
+private BonusFactory bonusFactory;
 
 void setup(){
   size(1800, 900);
   laserFactory = new LaserFactory(false);
   player = new Player(100, 500, laserFactory);
-  
+  bonusFactory = new BonusFactory();
+
+  bonusFactory.generateBonuse();
 }
 
 void draw(){
@@ -18,6 +21,8 @@ void draw(){
   player.edges();
 
   laserFactory.updateLasers();
+
+  bonusFactory.updateBonuses();
 }
 
 void keyReleased() {
