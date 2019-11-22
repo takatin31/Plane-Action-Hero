@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LaserFactory{
+public class LaserFactory implements Cloneable{
 
     private boolean missilesActivated;
     List<Laser> lasers;
@@ -38,8 +38,13 @@ public class LaserFactory{
         }
     }
 
-    public void activateMissiles(){
-        this.missilesActivated = true;
+    public void setActivateMissiles(boolean mA){
+        this.missilesActivated = mA;
     }
+
+    public Object clone() throws CloneNotSupportedException 
+    { 
+        return super.clone(); 
+    } 
 
 }

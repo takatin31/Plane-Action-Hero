@@ -1,7 +1,12 @@
 public class BouclierBonus extends Bonus{
 
+    int time;
+    Player player;
+    
+
     public BouclierBonus(PVector pos){
         super(pos);
+        time = 0;
     }
 
     public void render(){
@@ -17,7 +22,16 @@ public class BouclierBonus extends Bonus{
     }
 
     public void AffecterPlayer(Player player, LaserFactory laserFactory){
-        
+        this.player = player;
+        player.setBouclier(true);
+    }
+
+    public void manageBonus(){
+        time++;
+        if (time > timeLimit){
+            player.setBouclier(false);
+            activated = false;
+        }
     }
 
 }

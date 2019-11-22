@@ -1,7 +1,10 @@
 public class MissileBonus extends Bonus{
 
+    int time;
+
     public MissileBonus(PVector pos){
         super(pos);
+        time = 0;
     }
 
     public void render(){
@@ -17,7 +20,15 @@ public class MissileBonus extends Bonus{
     }
 
     public void AffecterPlayer(Player player, LaserFactory laserFactory){
-        laserFactory.activateMissiles();
+        laserFactory.setActivateMissiles(true);
+    }
+
+    public void manageBonus(){
+        time++;
+        if (time > timeLimit){
+            laserFactory.setActivateMissiles(false);
+            activated = false;
+        }
     }
 
 }

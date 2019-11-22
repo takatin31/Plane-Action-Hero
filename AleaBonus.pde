@@ -1,4 +1,4 @@
-public class AleaBonus extends Bonus{
+public abstract class AleaBonus extends Bonus{
 
     public AleaBonus(PVector pos){
         super(pos);
@@ -16,8 +16,8 @@ public class AleaBonus extends Bonus{
         popMatrix();
     }
 
-    public void AffecterPlayer(Player player, LaserFactory laserFactory){
-        
-    }
+    public abstract void AffecterPlayer(Player player, LaserFactory laserFactory);
+
+    public abstract void manageBonus();
 
 }

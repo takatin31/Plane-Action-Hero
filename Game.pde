@@ -5,9 +5,10 @@ private BonusFactory bonusFactory;
 void setup(){
   size(1800, 900);
   laserFactory = new LaserFactory(false);
-  player = new Player(100, 500, laserFactory);
-  bonusFactory = new BonusFactory();
 
+  player = new Player(100, 500, laserFactory);
+  
+  bonusFactory = new BonusFactory();
   bonusFactory.generateBonuse();
 }
 

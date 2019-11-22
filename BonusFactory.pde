@@ -8,7 +8,7 @@ public class BonusFactory{
     }
 
     public void generateBonuse(){
-        Bonus newB = new AleaBonus(new PVector(400, 400));
+        Bonus newB = new MissileBonus(new PVector(400, 400));
         bonuses.add(newB);
     }
 

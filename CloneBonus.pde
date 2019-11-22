@@ -1,7 +1,12 @@
 public class CloneBonus extends Bonus{
 
+    int time;
+    Player playerClone;
+    LaserFactory laserFactoryClone;
+
     public CloneBonus(PVector pos){
         super(pos);
+        time = 0;
     }
 
     public void render(){
@@ -17,7 +22,26 @@ public class CloneBonus extends Bonus{
     }
 
     public void AffecterPlayer(Player player, LaserFactory laserFactory){
-        
+        try{
+            playerClone = (Player)player.clone();
+            laserFactoryClone = (LaserFactory)laserFactory.clone();
+            playerClone.setLaserFactory(laserFactoryClone);
+        }catch(CloneNotSupportedException e){
+            
+        }
     }
 
+    public void manageBonus(){
+        time++;
+        if (time > timeLimit){
+            activated = false;
+        }else{
+            playerClone.render();
+            playerClone.turn();
+            playerClone.update();
+            playerClone.edges();
+
+            laserFactoryClone.updateLasers();
+        }
+    }
 }
