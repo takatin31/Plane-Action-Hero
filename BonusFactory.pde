@@ -8,7 +8,7 @@ public class BonusFactory{
     }
 
     public void generateBonus(){
-        int result = floor(random(0, 5));
+        int result = floor(random(0, 4));
         Bonus newB = null;
         PVector pos = new PVector(random(0, width), random(0, height));
         switch (result) {
@@ -16,7 +16,7 @@ public class BonusFactory{
                 newB = new MissileBonus(pos);
                 break;
             case 1:
-                newB = new CloneBonus(pos);
+                newB = new BouclierBonus(pos);
                 break;
             case 2:
                 newB = new CloneBonus(pos);

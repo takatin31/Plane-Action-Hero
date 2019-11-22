@@ -1,6 +1,7 @@
 private Player player;
 private LaserFactory laserFactory;
 private BonusFactory bonusFactory;
+private EnnemiFactory ennemiFactory;
 private int cpt;
 
 void setup(){
@@ -11,6 +12,8 @@ void setup(){
   player = new Player(100, 500, laserFactory);
 
   bonusFactory = new BonusFactory();
+
+  ennemiFactory = new EnnemiFactory();
   
 }
 

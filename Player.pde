@@ -53,10 +53,8 @@ public class Player implements Cloneable{
                 rotation = 0;
                 isBoosting = false;
             }
-                
-            
         }
-
+        
         if (isBoosting) {
             boost();
         }
