@@ -3,28 +3,30 @@ Player player;
 void setup(){
   size(1800, 900);
   
-  player = new Player(100, 100);
+  player = new Player(100, 500);
 }
 
 void draw(){
   background(51);
-  player.draw();
+  noCursor();
+  
+  player.render();
+  player.turn();
+  player.update();
+  player.edges();
 }
 
-void keyPressed(){
-  switch (keyCode) 
-	{
-		case UP:
-			player.moveUp();
-			break;
-		case DOWN:
-			player.moveDown();
-			break;
-		case RIGHT:
-			player.moveRight();
-			break;
-		case LEFT:
-			player.moveLeft();
-			break;
-	}
+void keyReleased() {
+  player.setRotation(0);
+  player.boosting(false);
+}
+
+void keyPressed() {
+  if (keyCode == RIGHT) {
+    player.setRotation(0.1);
+  } else if (keyCode == LEFT) {
+    player.setRotation(-0.1);
+  } else if (keyCode == UP) {
+    player.boosting(true);
+  }
 }
