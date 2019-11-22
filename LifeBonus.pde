@@ -8,7 +8,7 @@ public class LifeBonus extends AleaBonus{
         
     }
 
-    public void AffecterPlayer(Player player){
+    public void AffecterPlayer(Player player, LaserFactory laserFactory){
         
     }
 

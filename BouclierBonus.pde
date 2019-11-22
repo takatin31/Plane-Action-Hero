@@ -16,7 +16,7 @@ public class BouclierBonus extends Bonus{
         popMatrix();
     }
 
-    public void AffecterPlayer(Player player){
+    public void AffecterPlayer(Player player, LaserFactory laserFactory){
         
     }
 

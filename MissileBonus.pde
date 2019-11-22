@@ -16,8 +16,8 @@ public class MissileBonus extends Bonus{
         popMatrix();
     }
 
-    public void AffecterPlayer(Player player){
-        
+    public void AffecterPlayer(Player player, LaserFactory laserFactory){
+        laserFactory.activateMissiles();
     }
 
 }

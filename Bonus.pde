@@ -7,6 +7,6 @@ public abstract class Bonus{
 
     public abstract void render();
 
-    public abstract void AffecterPlayer(Player player);
+    public abstract void AffecterPlayer(Player player, LaserFactory laserFactory);
 
 }
