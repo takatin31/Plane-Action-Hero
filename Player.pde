@@ -8,9 +8,10 @@ public class Player{
     private float heading;
     private float rotation;
     private boolean isBoosting = false;
+    private LaserFactory laserFactory;
 
 
-  public Player(float x, float y) {
+  public Player(float x, float y, LaserFactory laserFactory) {
     pos = new PVector(x, y);
     r = 20;
     heading = 0;
@@ -19,6 +20,7 @@ public class Player{
     isBoosting = false;
     life = 100;
     attack = 1;
+    this.laserFactory = laserFactory;
   }
 
   void boosting(boolean b) {
@@ -31,6 +33,10 @@ public class Player{
     }
     pos.add(vel);
     vel.mult(0.99);
+  }
+
+  void shoot(){
+      laserFactory.shoot(pos, heading);
   }
 
   void boost() {

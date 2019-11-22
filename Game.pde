@@ -1,9 +1,11 @@
 Player player;
+private LaserFactory laserFactory;
 
 void setup(){
   size(1800, 900);
+  laserFactory = new LaserFactory(false);
+  player = new Player(100, 500, laserFactory);
   
-  player = new Player(100, 500);
 }
 
 void draw(){
@@ -14,6 +16,8 @@ void draw(){
   player.turn();
   player.update();
   player.edges();
+
+  laserFactory.updateLasers();
 }
 
 void keyReleased() {
@@ -22,7 +26,9 @@ void keyReleased() {
 }
 
 void keyPressed() {
-  if (keyCode == RIGHT) {
+  if (key == ' ') {
+    player.shoot();
+  } else if (keyCode == RIGHT) {
     player.setRotation(0.1);
   } else if (keyCode == LEFT) {
     player.setRotation(-0.1);
