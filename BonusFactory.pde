@@ -1,3 +1,3 @@
-class BonusFactory{
+public abstract class BonusFactory{
     
 }

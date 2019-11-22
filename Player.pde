@@ -17,6 +17,8 @@ public class Player{
     rotation = 0;
     vel = new PVector(0, 0);
     isBoosting = false;
+    life = 100;
+    attack = 1;
   }
 
   void boosting(boolean b) {
@@ -39,6 +41,12 @@ public class Player{
 
 
   void render() {
+    stroke(255);
+    noFill();
+    rect(pos.x-20, pos.y-2*r, 40, 5);
+    noStroke();
+    fill(0, 255, 0);
+    rect(pos.x-20, pos.y-2*r, (40*life)/100, 5);
     pushMatrix();
     translate(pos.x, pos.y);
     rotate(heading + PI / 2);
