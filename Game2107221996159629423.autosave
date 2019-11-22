@@ -1,0 +1,11 @@
+Player player;
+
+void setup(){
+  size(1800, 900);
+  background(51);
+  player = Player.getInstance(100, 100);
+}
+
+void draw(){
+  player.draw();
+}
