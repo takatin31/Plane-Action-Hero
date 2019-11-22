@@ -142,6 +142,10 @@ public class Player implements Cloneable{
         heading += rotation;
     }
 
+    public PVector getPos(){
+        return pos;
+    }
+
     public Object clone() throws CloneNotSupportedException 
     { 
         return super.clone(); 

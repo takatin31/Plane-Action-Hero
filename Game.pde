@@ -1,18 +1,27 @@
 private Player player;
 private LaserFactory laserFactory;
 private BonusFactory bonusFactory;
+private int cpt;
 
 void setup(){
   size(1800, 900);
+  cpt = 0;
   laserFactory = new LaserFactory(false);
 
   player = new Player(100, 500, laserFactory);
-  
+
   bonusFactory = new BonusFactory();
-  bonusFactory.generateBonuse();
+  
 }
 
 void draw(){
+  cpt ++;
+
+  if (cpt == 100){
+    cpt = 0;
+    bonusFactory.generateBonus();
+  }
+
   background(51);
   noCursor();
   
@@ -23,7 +32,7 @@ void draw(){
 
   laserFactory.updateLasers();
 
-  bonusFactory.updateBonuses();
+  bonusFactory.updateBonuses(player, laserFactory);
 }
 
 void keyReleased() {
