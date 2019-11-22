@@ -6,9 +6,8 @@ public class Missile extends Laser{
 
     public void render(){
         pushMatrix();
-        stroke(255);
-        strokeWeight(4);
-        point(pos.x, pos.y);
+        fill(255, 0, 0);
+        ellipse(pos.x, pos.y, 10, 10);
         popMatrix();
     }
 

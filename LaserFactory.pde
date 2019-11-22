@@ -19,6 +19,7 @@ public class LaserFactory{
             nbrMissilesShooted++;
             if (nbrMissilesShooted > limitMissiles){
                 missilesActivated = false;
+                nbrMissilesShooted = 0;
             }
         }else{
             
